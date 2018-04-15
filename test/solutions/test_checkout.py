@@ -87,6 +87,13 @@ class TestCheckout(unittest.TestCase):
     
     def test_FFFFFFF(self):
         self.assertEqual(checkout('FFFFFFF'), 50)
+        
+    def test_HHHH(self):
+        self.assertEqual(checkout('HHHH'), 40)
+        
+    def test_HHHHH(self):
+        self.assertEqual(checkout('HHHHH'), 45)
+    
     
 if __name__ == '__main__':
     unittest.main()
