@@ -4,7 +4,8 @@
 # skus = unicode string
 def checkout(skus):
     skus = ''.join(sorted(skus))
-    prices = (('AAA', 130), ('BB', 45), ('A', 50), ('B', 30), ('C', 20), ('D', 15))
+
+    prices = (('AAAAA', 200), ('AAA', 130), ('BB', 45), ('A', 50), ('B', 30), ('C', 20), ('D', 15), ('E', 40))
 
     price, skus = calculate_price(skus, prices)
 
