@@ -97,6 +97,8 @@ class TestCheckout(unittest.TestCase):
     def test_STXYZ(self):
         self.assertEqual(checkout('STXYZ'), 82)
         
-    
+    def test_STXXYZ(self):
+        self.assertEqual(checkout('STXXYZ'), 90)
+            
 if __name__ == '__main__':
     unittest.main()

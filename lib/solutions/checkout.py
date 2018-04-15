@@ -30,8 +30,6 @@ def checkout(skus):
     price += both[0]
     skus = both[1]
 
-    return price, skus
-
     both = calculate_price(skus, prices)
     price += both[0]
     skus = both[1]
@@ -74,6 +72,7 @@ def buy_any_three_for_price(skus, price, products):
         return 0, skus
     
     total_price = (found / 3) * price
+    found = found - found % 3
 
     for product in products:
         count = skus.count(product)
