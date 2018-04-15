@@ -21,6 +21,12 @@ class TestCheckout(unittest.TestCase):
 
     def test_AAAA(self):
         self.assertEqual(checkout('AAAA'), 180)
+
+    def test_AAAAA(self):
+        self.assertEqual(checkout('AAAAA'), 230)
+
+    def test_AAAAAA(self):
+        self.assertEqual(checkout('AAAAAA'), 260)
     
     def test_B(self):
         self.assertEqual(checkout('B'), 30)
