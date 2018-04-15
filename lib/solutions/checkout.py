@@ -3,6 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
+    skus = ''.join(sorted(skus))
     discounts = {'AAA': 130, 'BB': 45}
     prices = {'A': 50, 'B': 30, 'C': 20, 'D': 15}
 
@@ -11,7 +12,7 @@ def checkout(skus):
 
     price += both[0]
     skus = both[1]
-    
+
     if skus:
         return -1
     return price
