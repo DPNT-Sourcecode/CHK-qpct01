@@ -26,6 +26,10 @@ def checkout(skus):
     price += both[0]
     skus = both[1]
 
+    both = buy_any_three_for_price(skus, 45, ['Z', 'Y', 'S', 'T', 'X']) # Sorted by price from high to low
+    price += both[0]
+    skus = both[1]
+
     both = calculate_price(skus, prices)
     price += both[0]
     skus = both[1]
@@ -58,4 +62,5 @@ def buy_n_get_one_for_free(n, skus, price, product):
     return count * price, skus.replace(group, '')
 
 def buy_any_three_for_price(skus, price, products):
-    
+    found = 0
+    total_price = 0
