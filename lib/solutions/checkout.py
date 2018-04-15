@@ -6,8 +6,12 @@ def checkout(skus):
     skus = ''.join(sorted(skus))
 
     prices = (('AAAAA', 200), ('AAA', 130), ('BB', 45), ('A', 50), ('B', 30), ('C', 20), ('D', 15), ('E', 40))
+    
+    price, skus = buy_one_group_get_one_for_free(skus, 80, 'EE', 'B')
+    both = calculate_price(skus, prices)
 
-    price, skus = calculate_price(skus, prices)
+    price += both[0]
+    skus = both[1]
 
     if skus:
         return -1
@@ -24,3 +28,5 @@ def calculate_price(skus, prices):
 
 def buy_one_group_get_one_for_free(skus, price, group, free):
     count = skus.count(group)
+    skus = skus.replace(free, count)
+    return count * price, skus
