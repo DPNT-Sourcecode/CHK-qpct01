@@ -5,7 +5,7 @@ from lib.solutions.checkout import checkout
 
 class TestCheckout(unittest.TestCase):
     def test_invalid(self):
-        self.assertEqual(checkout('F'), -1)
+        self.assertEqual(checkout('Z'), -1)
 
     def test_empty(self):
         self.assertEqual(checkout(''), 0)
@@ -66,6 +66,27 @@ class TestCheckout(unittest.TestCase):
 
     def test_EEE(self):
         self.assertEqual(checkout('EEE'), 120)
+    
+    def test_F(self):
+        self.assertEqual(checkout('F'), 10)
+    
+    def test_FF(self):
+        self.assertEqual(checkout('FF'), 20)
+    
+    def test_FFF(self):
+        self.assertEqual(checkout('FFF'), 20)
+    
+    def test_FFFF(self):
+        self.assertEqual(checkout('FFFF'), 30)
+    
+    def test_FFFFF(self):
+        self.assertEqual(checkout('FFFFF'), 40)
+    
+    def test_FFFFFF(self):
+        self.assertEqual(checkout('FFFFFF'), 40)
+    
+    def test_FFFFFFF(self):
+        self.assertEqual(checkout('FFFFFFF'), 50)
     
 if __name__ == '__main__':
     unittest.main()

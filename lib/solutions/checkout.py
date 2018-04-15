@@ -28,5 +28,6 @@ def calculate_price(skus, prices):
 
 def buy_one_group_get_one_for_free(skus, price, group, free):
     count = skus.count(group)
+    skus = skus.replace(group, '')
     skus = skus.replace(free, '', count)
-    return count * price, skus.replace(group, '')
+    return count * price, skus
