@@ -6,7 +6,12 @@ def checkout(skus):
     discounts = {'AAA': 130, 'BB': 45}
     prices = { 'A': 50, 'B': 30, 'C': 20, 'D': 15}
 
-    price = 0
-    count_aaa = skus.count('AAA')
 
-    return count_aaa
+    return price, skus
+
+def calculate_prices():
+    price = 0
+    for discount in discounts.iterkeys():
+        price += skus.count(discount) * discounts[discount]
+        skus = skus.replace(discount, '')
+    return price, skus
