@@ -63,7 +63,6 @@ def buy_n_get_one_for_free(n, skus, price, product):
 
 def buy_any_three_for_price(skus, price, products):
     found = 0
-    total_price = 0
 
     for product in products:
         if product in skus:
@@ -72,4 +71,14 @@ def buy_any_three_for_price(skus, price, products):
     if product < 3:
         return 0, skus
     
-    discounts = found / 3
+    total_price = (found / 3) * price
+
+    for product in products:
+        count = skus.count(product)
+        if (found - count) > 0:
+            skus = skus.replace(product, '', count)
+            found -= count
+        else:
+            break
+
+    return total_price, skus
