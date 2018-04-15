@@ -5,7 +5,7 @@ from lib.solutions.checkout import checkout
 
 class TestCheckout(unittest.TestCase):
     def test_invalid(self):
-        self.assertEqual(checkout('Z'), -1)
+        self.assertEqual(checkout('1'), -1)
 
     def test_empty(self):
         self.assertEqual(checkout(''), 0)
