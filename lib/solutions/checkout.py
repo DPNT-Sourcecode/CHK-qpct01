@@ -10,6 +10,10 @@ def checkout(skus):
 
     price, skus = buy_n_get_one_for_free(2, skus, 20, 'F')
 
+    both = buy_n_get_one_for_free(3, skus, 120, 'U')
+    price += both[0]
+    skus = both[1]
+
     both = buy_one_group_get_one_for_free(skus, 80, 'EE', 'B')
     price += both[0]
     skus = both[1]
