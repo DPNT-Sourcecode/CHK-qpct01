@@ -12,7 +12,18 @@ def checkout(skus):
         skus = skus.replace(key, '')
     
     for key in prices.iterkeys():
-        price += skus.count(key) * discounts[key]
+        price += skus.count(key) * prices[key]
         skus = skus.replace(key, '')
 
+    if skus:
+        return -1
     return price
+
+def calculate_price(skus, prices):
+    price = 0
+
+    for key in prices.iterkeys():
+        price += skus.count(key) * prices[key]
+        skus = skus.replace(key, '')
+    
+    return price, skus
